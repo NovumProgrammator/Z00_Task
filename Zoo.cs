@@ -21,7 +21,7 @@
         {
             if (_animals.Count > 0)
             {
-                foreach (var animal in _animals)
+                foreach (AnimalBase animal in _animals)
                 {
                     if (string.Equals(name, animal.Name, StringComparison.InvariantCultureIgnoreCase))
                     {
