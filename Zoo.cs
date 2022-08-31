@@ -23,7 +23,7 @@
             {
                 foreach (var animal in _animals)
                 {
-                    if (animal.Name == name)
+                    if (string.Equals(name, animal.Name, StringComparison.InvariantCultureIgnoreCase))
                     {
                         // todo: убрать зависимость от способа ввода и вывода из этого класса
                         Console.WriteLine($"{animal.Species} - {animal.Name}");
