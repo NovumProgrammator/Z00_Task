@@ -1,4 +1,5 @@
 ﻿using Z00_Task;
+using Z00_Task.Domain;
 
 var zoo = new Zoo();
 

@@ -1,4 +1,4 @@
-﻿namespace Z00_Task
+﻿namespace Z00_Task.Domain
 {
     internal class Elephant : AnimalBase
     {

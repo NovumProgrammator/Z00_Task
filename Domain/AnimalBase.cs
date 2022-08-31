@@ -1,4 +1,4 @@
-﻿namespace Z00_Task
+﻿namespace Z00_Task.Domain
 {
     /// <summary>
     /// Base class for all animals.
