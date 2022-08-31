@@ -2,7 +2,7 @@
 {
     internal class AnimalFactory
     {
-        public Animal Create(Animal animal, string name)
+        public AnimalBase Create(AnimalBase animal, string name)
         {
             switch (animal.Species.ToLower())
             {

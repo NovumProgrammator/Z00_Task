@@ -1,10 +1,9 @@
 ﻿namespace Z00_Task
 {
-    internal class Falcon : Animal
+    internal class Falcon : AnimalBase
     {
         public Falcon(string name) : base(name)
         {
-            Class = AnimalClass.Bird.ToString();
             Species = "Falcon";
             IsPredator = true;
         }
