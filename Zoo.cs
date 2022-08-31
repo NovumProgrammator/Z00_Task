@@ -2,7 +2,7 @@
 {
     internal class Zoo
     {
-        private List<AnimalBase> _animals = new List<AnimalBase>();
+        private readonly List<AnimalBase> _animals = new List<AnimalBase>();
 
         public void AddAnimal(AnimalBase animalBase)
         {
