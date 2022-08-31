@@ -34,7 +34,7 @@
                     }
                 }
             }
-
+            // todo: возможная проблема безопасности - даем пользователю больше данных, чем нужно
             Console.WriteLine("There're no animals in this Zoo");
         }
     }
