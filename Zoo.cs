@@ -25,6 +25,7 @@
                 {
                     if (animal.Name == name)
                     {
+                        // todo: убрать зависимость от способа ввода и вывода из этого класса
                         Console.WriteLine($"{animal.Species} - {animal.Name}");
                     }
                     else
