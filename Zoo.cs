@@ -11,10 +11,10 @@
 
         public void GetAnimalsList()
         {
-            foreach (var animal in _animals)
+            _animals.ForEach(x =>
             {
-                Console.WriteLine($"{animal.Species} - {animal.Name}");
-            }
+                Console.WriteLine($"{x.Species} - {x.Name}");
+            });
         }
 
         public void FindAnimal(string name)
