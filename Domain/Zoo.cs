@@ -15,5 +15,12 @@ namespace Z00_Task.Domain
         {
             _animalStorage.AddAnimal(animal);
         }
+
+        public IEnumerable<AnimalBase> GetAnimalsList() => _animalStorage.GetAnimalsList();
+
+        public bool TryFindAnimal(string name, out AnimalBase? foundedAnimal)
+        {
+            return _animalStorage.TryFindAnimal(name, out foundedAnimal);
+        }
     }
 }

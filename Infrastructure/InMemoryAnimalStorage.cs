@@ -19,7 +19,7 @@ internal class InMemoryAnimalStorage : IAnimalStorage
     /// <param name="name">name to find</param>
     /// <param name="foundedAnimal">founded animal (if found)</param>
     /// <returns>true, if animal with such name found, otherwise false</returns>
-    public bool TryFindAnimal(string name, out AnimalBase foundedAnimal)
+    public bool TryFindAnimal(string name, out AnimalBase? foundedAnimal)
     {
         foundedAnimal = _animals.FirstOrDefault(x => string.Equals(name, x.Name, StringComparison.InvariantCultureIgnoreCase));
         return foundedAnimal != null;
