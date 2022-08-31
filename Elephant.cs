@@ -4,7 +4,6 @@
     {
         public Elephant(string name) : base(name)
         {
-            Class = AnimalClass.Mammal.ToString();
             Species = "Elephant";
             IsPredator = false;
         }
