@@ -1,8 +1,9 @@
 ﻿namespace Z00_Task
 {
-    internal static class Animal
+    internal abstract class Animal
     {
-        enum AnimalClass
+        public static List<Animal> animals = new List<Animal>();
+        public enum AnimalClass
         {
             Mammal,
             Bird,
@@ -10,11 +11,18 @@
             Amphibian,
             Insect
         }
-        public static string Class { get; set; }
-        public static void GetSome()
+        public string Name { get; set; }
+        public string Species { get; set; }
+        public string Class { get; set; }
+        public string Gender { get; set; }
+        public double Weight { get; set; }
+        public double Speed { get; set; }
+        public bool IsPredator { get; set; }
+
+        public Animal(string name)
         {
-            Class = AnimalClass.Amphibian.ToString();
-            Console.WriteLine(Class);
+            Name = name;
+            animals.Add(this);
         }
     }
 }
