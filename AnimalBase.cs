@@ -15,7 +15,7 @@
         public string Gender { get; set; }
         public double Weight { get; set; }
         public double Speed { get; set; }
-        public bool IsPredator { get; set; }
+        public bool IsPredator { get; protected set; }
 
         public AnimalBase(string name)
         {
