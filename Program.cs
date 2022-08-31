@@ -27,7 +27,10 @@ var squirrel = new Squirrel("Tina")
     Weight = 1200
 };
 
+while (true)
+{
 
+}
 
 
 
