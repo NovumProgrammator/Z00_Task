@@ -1,3 +1,5 @@
+using Z00_Task.Domain;
+
 namespace Z00_Task.Infrastructure;
 
 public interface IAnimalStorage
