@@ -1,6 +1,6 @@
 ﻿namespace Z00_Task
 {
-    internal abstract class AnimalBase
+    public abstract class AnimalBase
     {
         public static List<AnimalBase> animals = new List<AnimalBase>();
         public string Name { get; set; }

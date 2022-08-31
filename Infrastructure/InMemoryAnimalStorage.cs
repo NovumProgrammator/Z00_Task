@@ -1,6 +1,6 @@
-namespace Z00_Task.Domain;
+namespace Z00_Task.Infrastructure;
 
-internal class InMemoryAnimalStorage
+internal class InMemoryAnimalStorage : IAnimalStorage
 {
     private readonly List<AnimalBase> _animals = new List<AnimalBase>();
 
