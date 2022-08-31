@@ -2,9 +2,9 @@
 {
     internal class AnimalFactory
     {
-        public Animal Create(Animal animal, string name)
+        public AnimalBase Create(AnimalBase animalBase, string name)
         {
-            switch (animal.Species.ToLower())
+            switch (animalBase.Species.ToLower())
             {
                 case "cobra":
                     return new Cobra(name);

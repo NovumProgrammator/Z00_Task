@@ -1,6 +1,6 @@
 ﻿namespace Z00_Task
 {
-    internal class Cobra : Animal
+    internal class Cobra : AnimalBase
     {
         public Cobra(string name) : base(name)
         {

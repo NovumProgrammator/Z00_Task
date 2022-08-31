@@ -2,11 +2,11 @@
 {
     internal class Zoo
     {
-        private List<Animal> _animals = new List<Animal>();
+        private List<AnimalBase> _animals = new List<AnimalBase>();
 
-        public void AddAnimal(Animal animal)
+        public void AddAnimal(AnimalBase animalBase)
         {
-            _animals.Add(animal);
+            _animals.Add(animalBase);
         }
 
         public void GetAnimalsList()

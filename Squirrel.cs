@@ -1,6 +1,6 @@
 ﻿namespace Z00_Task
 {
-    internal class Squirrel : Animal
+    internal class Squirrel : AnimalBase
     {
         public Squirrel(string name) : base(name)
         {

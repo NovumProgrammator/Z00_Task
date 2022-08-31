@@ -1,6 +1,6 @@
 ﻿namespace Z00_Task
 {
-    internal class Elephant : Animal
+    internal class Elephant : AnimalBase
     {
         public Elephant(string name) : base(name)
         {
