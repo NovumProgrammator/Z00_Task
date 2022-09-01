@@ -2,9 +2,10 @@
 {
     internal class Cobra : AnimalBase
     {
+        public Cobra() { }
         public Cobra(string name) : base(name)
         {
-            Species = "Cobra";
+            Class = "Reptile";
             IsPredator = true;
         }
     }

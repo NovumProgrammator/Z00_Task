@@ -11,7 +11,7 @@ internal class InMemoryAnimalStorage : IAnimalStorage
         _animals.Add(animalBase);
     }
 
-    public IEnumerable<AnimalBase> GetAnimalsList() => _animals;
+    public IEnumerable<AnimalBase> PrintAnimals() => _animals;
 
     /// <summary>
     /// Search animal with given name.
@@ -22,6 +22,10 @@ internal class InMemoryAnimalStorage : IAnimalStorage
     public bool TryFindAnimal(string name, out AnimalBase? foundedAnimal)
     {
         foundedAnimal = _animals.FirstOrDefault(x => string.Equals(name, x.Name, StringComparison.InvariantCultureIgnoreCase));
+        
+        if (foundedAnimal != null)
+            foundedAnimal.Name = name;
+
         return foundedAnimal != null;
     }
 }

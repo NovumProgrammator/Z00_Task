@@ -16,7 +16,7 @@ namespace Z00_Task.Domain
             _animalStorage.AddAnimal(animal);
         }
 
-        public IEnumerable<AnimalBase> GetAnimalsList() => _animalStorage.GetAnimalsList();
+        public IEnumerable<AnimalBase> PrintAnimals() => _animalStorage.PrintAnimals();
 
         public bool TryFindAnimal(string name, out AnimalBase? foundedAnimal)
         {

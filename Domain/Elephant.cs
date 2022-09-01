@@ -2,9 +2,10 @@
 {
     internal class Elephant : AnimalBase
     {
+        public Elephant() { }
         public Elephant(string name) : base(name)
         {
-            Species = "Elephant";
+            Class = "Mammal";
             IsPredator = false;
         }
     }

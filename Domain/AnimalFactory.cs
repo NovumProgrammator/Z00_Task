@@ -1,21 +1,22 @@
 ﻿namespace Z00_Task.Domain
 {
-    internal class AnimalFactory
+    internal static class AnimalFactory
     {
-        public AnimalBase Create(AnimalBase animalBase, string name)
+        public static AnimalBase Create(AnimalBase animalBase, string name)
         {
-            switch (animalBase.Species.ToLower())
+            switch (animalBase.Species)
             {
-                case "cobra":
+                case "Cobra":
                     return new Cobra(name);
-                case "elephant":
+                case "Elephant":
                     return new Elephant(name);
-                case "falcon":
+                case "Falcon":
                     return new Falcon(name);
-                case "squirrel":
+                case "Squirrel":
                     return new Squirrel(name);
                 default:
-                    throw new Exception("Choose animal species");
+                    Console.WriteLine("Choose animal species");
+                    return null;
                     break;
             }
         }
