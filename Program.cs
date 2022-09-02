@@ -19,6 +19,7 @@ string[] actionVariants =
         "3 - Find animal by name"
     };
 
+// --Main loop-- //
 while (true)
 {
     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -91,16 +92,15 @@ static void AddAnimalToZoo(List<AnimalBase> animals, Zoo zoo)
         if (gender > 2) gender = 0;
 
         Console.Write("Max Speed (m/s): ");
-        double.TryParse(Console.ReadLine(), out double speed);
+        double.TryParse(Console.ReadLine().Replace('.', ','), out double speed);
 
         Console.Write("Weight (gramm): ");
-        double.TryParse(Console.ReadLine(), out double weight);
+        double.TryParse(Console.ReadLine().Replace('.', ','), out double weight);
 
         switch (animalChoise)
         {
             case 1:
                 zoo.AddAnimal(new Cobra(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight});
-                zoo.PrintAnimals();
                 break;
             case 2:
                 zoo.AddAnimal(new Elephant(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight });
