@@ -22,7 +22,7 @@ string[] actionVariants =
 while (true)
 {
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine(new String('=', 30));
+    Console.WriteLine(new string('=', 30));        // separator
     Console.WriteLine("What do you want to do?\n");
 
     for (int i = 0; i < actionVariants.Length; i++)
@@ -33,8 +33,9 @@ while (true)
 
     int.TryParse(Console.ReadLine(), out int actionChoice);
 
-    Console.WriteLine(new String('-', 30));
+    Console.WriteLine(new string('-', 30));
 
+    // First block -- choosing action
     switch (actionChoice)
     {
         case 1:
@@ -64,70 +65,78 @@ while (true)
             Console.ForegroundColor = ConsoleColor.Yellow;
             break;
     }
+}
 
-    static AnimalBase AddAnimalToZoo(List<AnimalBase> animals, Zoo zoo)
+static void AddAnimalToZoo(List<AnimalBase> animals, Zoo zoo)
+{
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine("What kind of animal do you want to add?\n");
+
+    for (int i = 0; i < animals.Count; i++)
     {
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("What kind of animal do you want to add?\n");
-
-        for (int i = 0; i < animals.Count; i++)
-        {
-            Console.WriteLine($"{i+1} - {animals[i].Species}");
-        }
-        Console.WriteLine(new String('-', 30));
-
-        animalChoise:
-        int.TryParse(Console.ReadLine(), out int animalChoise);
-
-        if (animalChoise > 0 && animalChoise <= animals.Count)
-        {
-            Console.WriteLine("\nGive it name:");
-
-            string animalName = Console.ReadLine();
-
-            switch (animalChoise)
-            {
-                case 1:
-                    zoo.AddAnimal(new Cobra(animalName));
-                    break;
-                case 2:
-                    zoo.AddAnimal(new Elephant(animalName));
-                    break;
-                case 3:
-                    zoo.AddAnimal(new Falcon(animalName));
-                    break;
-                case 4:
-                    zoo.AddAnimal(new Squirrel(animalName));
-                    break;
-                default:
-                    break;
-            }
-        }
-        else
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"You should choose between 1 and {animals.Count}");
-            Console.ForegroundColor = ConsoleColor.White;
-            goto animalChoise;
-        }
-
-        return null;
+        Console.WriteLine($"{i + 1} - {animals[i].Species}");
     }
+    Console.WriteLine(new string('-', 30)); // ------------ separator
 
-    static void TryToFind(string name, Zoo zoo)
+    animalChoise:
+    int.TryParse(Console.ReadLine(), out int animalChoise);
+
+    if (animalChoise > 0 && animalChoise <= animals.Count)
     {
-        bool found = zoo.TryFindAnimal(name, out AnimalBase? animal);
+        Console.Write("\nInput Name: ");
+        string animalName = Console.ReadLine();
 
-        if (found)
+        Console.Write("Choose a gender (0 - Unknown | 1 - Female | 2 - Male): ");
+        uint.TryParse(Console.ReadLine(), out uint gender);
+        if (gender > 2) gender = 0;
+
+        Console.Write("Max Speed (m/s): ");
+        double.TryParse(Console.ReadLine(), out double speed);
+
+        Console.Write("Weight (gramm): ");
+        double.TryParse(Console.ReadLine(), out double weight);
+
+        switch (animalChoise)
         {
-            Console.WriteLine("Success:");
-            Console.WriteLine($"{animal.Species} - {animal.Name}");
+            case 1:
+                zoo.AddAnimal(new Cobra(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight});
+                zoo.PrintAnimals();
+                break;
+            case 2:
+                zoo.AddAnimal(new Elephant(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight });
+                break;
+            case 3:
+                zoo.AddAnimal(new Falcon(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight});
+                break;
+            case 4:
+                zoo.AddAnimal(new Squirrel(animalName) { AnimalGender = (Gender)gender, MaxSpeed = speed, Weight = weight });
+                break;
+            default:
+                break;
         }
-        else
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Not found");
-        }
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"You should choose between 1 and {animals.Count}");
+        Console.ForegroundColor = ConsoleColor.White;
+        goto animalChoise;
+    }
+}
+
+static void TryToFind(string name, Zoo zoo)
+{
+    bool found = zoo.TryFindAnimal(name, out AnimalBase? animal);
+
+    if (found)
+    {
+        Console.WriteLine("Success:");
+        Console.WriteLine($"{animal.Species} - {animal.Name}");
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Not found");
     }
 }
 

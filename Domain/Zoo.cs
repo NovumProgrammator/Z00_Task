@@ -4,6 +4,7 @@ namespace Z00_Task.Domain
 {
     internal class Zoo
     {
+        // External storage
         private readonly IAnimalStorage _animalStorage;
 
         public Zoo (IAnimalStorage animalStorage)
